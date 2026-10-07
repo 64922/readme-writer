@@ -36,19 +36,19 @@
 前置：一个支持 Agent Skills 的运行时（如 Claude Code、opencode）。
 
 ```bash
-git clone https://github.com/64922/awesome-repos-readme.git
+git clone https://github.com/64922/readme-writer.git
 ```
 
 安装到用户级技能目录（对所有项目生效）：
 
 ```powershell
 # Windows PowerShell
-Copy-Item -Recurse .\awesome-repos-readme\readme-writer "$env:USERPROFILE\.agents\skills\"
+Copy-Item -Recurse .\readme-writer\readme-writer "$env:USERPROFILE\.agents\skills\"
 ```
 
 ```bash
 # macOS / Linux
-cp -r awesome-repos-readme/readme-writer ~/.agents/skills/
+cp -r readme-writer/readme-writer ~/.agents/skills/
 ```
 
 放进项目的 `.agents/skills/` 则只对该项目生效。
