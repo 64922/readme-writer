@@ -1,12 +1,12 @@
 ---
 name: readme-writer
-description: 为软件项目撰写或改进优质的 README.md，含诊断、取证、访谈、成稿与真实性自检。触发场景：写 README、生成/改进/审计/重写 README、项目介绍文档、"这个仓库缺个 README"、"README 写得不好"。反触发：不负责 CHANGELOG/CONTRIBUTING/LICENSE/API 文档，不接纯代码任务，不适用于非软件仓库（awesome list、数据集、纯文档站）。
+description: 为软件项目撰写或改进 README.md（真实第一：声明可溯源）。触发：写/生成 README、"这个仓库缺个 README"、项目介绍文档；改进/重写/审计 README、"README 写得不好"。反触发：非软件仓库（awesome list、数据集、纯文档站）；README.md 以外的文件（CHANGELOG、CONTRIBUTING、API 文档）；纯代码任务。
 argument-hint: "仓库路径（默认当前目录），可附加读者/语气等侧重"
 ---
 
 # Skill: readme-writer
 
-为软件项目撰写或改进 `README.md`。**全程只交付这一个文件。**
+为软件项目撰写或改进 `README.md`。
 
 ## 铁律
 
@@ -28,6 +28,8 @@ argument-hint: "仓库路径（默认当前目录），可附加读者/语气等
 - 超小项目（单文件、核心代码 <500 行）：允许裁剪为最小节集合（名称+一句话 / 用法 / 许可），不硬凑章节。
 - Monorepo：默认只处理根 README；用户明确指定子包才处理该子包。
 
+**完成标志**：模式已判定；凡仓库能查到的信息都已取证，查不到的列成阶段 2 访谈清单。
+
 ### 阶段 2 补缺访谈（只问查不到的）
 
 成组提问，附上你的推断让用户确认，而非从零回答：
@@ -37,22 +39,28 @@ argument-hint: "仓库路径（默认当前目录），可附加读者/语气等
 3. 成熟度承诺（alpha / beta / 稳定 / 停更）？
 4. 可选节取舍（News / Architecture / Ecosystem / Community / Citation / 语言 switcher / ToC）？
 
-答不上来的记"待确认"，绝不编造。语言：改进模式默认保持原语言；生成模式依据仓库信号提议一种主语言并由用户确认。
+答不上来的记"待确认"。语言：改进模式默认保持原语言；生成模式依据仓库信号提议一种主语言并由用户确认。
+
+**完成标志**：写作所需的信息全部已确认或标为"待确认"。
 
 ### 阶段 3 大纲 gate
 
 输出：章节大纲（核心节 + 选中的可选节）、每节要点、保留/重写清单（改进模式）、素材缺口。
-**用户批准前不得动笔。**
+**完成标志：用户明确批准大纲与清单；批准前不得动笔。**
 
 ### 阶段 4 成稿
 
 按 `references/templates.md` 各节规范写作，遵守篇幅预算（正文 150–400 行；>500 行逐节自问"这内容属于 README 还是 docs"）。
 
-写入规则：直接写 `README.md`；覆盖已有文件且非 git 仓库时，先把原文件备份到系统临时目录（备份路径写进报告）；git 仓库靠 `git diff` 兜底。全程只碰 README.md。
+写入规则：直接写 `README.md`；覆盖已有文件且非 git 仓库时，先把原文件备份到系统临时目录（备份路径写进报告）；git 仓库靠 `git diff` 兜底。
+
+**完成标志**：`README.md` 已写出，篇幅在预算内。
 
 ### 阶段 5 自检
 
-按 `references/verification.md` 执行五条回验，产出核对报告（已核实 / 待确认 / 缺失提示 / 备份路径）。存在未核实项时如实说明，不得声称完成。
+按 `references/verification.md` 执行五条回验，产出核对报告（已核实 / 待确认 / 缺失提示 / 备份路径）。
+
+**完成标志**：五条回验各有结论，核对报告四段齐全。
 
 ## 反触发
 
@@ -61,8 +69,8 @@ argument-hint: "仓库路径（默认当前目录），可附加读者/语气等
 
 ## References
 
-| 文件 | 何时读 |
-|------|--------|
-| `references/templates.md` | 阶段 1 起：骨架、各节规范、Hero HTML 最小集、badge 白名单、篇幅预算 |
-| `references/verification.md` | 阶段 5：五条回验的执行细则与报告格式 |
-| `references/samples.md` | 动笔前：4 份样例的结构分析与学/不学清单 |
+| 文件 | 内容 |
+|------|------|
+| `references/templates.md` | 骨架、各节规范、Hero HTML 最小集、badge 白名单、篇幅预算 |
+| `references/verification.md` | 五条回验的执行细则与报告格式 |
+| `references/samples.md` | 4 份样例的结构分析与学/不学清单 |
